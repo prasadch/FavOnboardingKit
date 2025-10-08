@@ -14,9 +14,10 @@ class OnboardingViewController: UIViewController {
   
   private let slides: [Slide]
   private let tintColor: UIColor
+    private let themeFont: UIFont
   
   private lazy var transitionView: TransitionView = {
-    let view = TransitionView(slides: slides, tintColor: tintColor)
+    let view = TransitionView(slides: slides, tintColor: tintColor, themeFont: themeFont)
     return view
   }()
   
@@ -37,11 +38,12 @@ class OnboardingViewController: UIViewController {
     return view
   }()
   
-  init(slides: [Slide], tintColor: UIColor) {
-    self.slides = slides
-    self.tintColor = tintColor
-    super.init(nibName: nil, bundle: nil)
-  }
+    init(slides: [Slide], tintColor: UIColor, themeFont: UIFont) {
+        self.slides = slides
+        self.tintColor = tintColor
+        self.themeFont = themeFont
+        super.init(nibName: nil, bundle: nil)
+    }
   
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
